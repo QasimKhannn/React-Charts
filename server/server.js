@@ -6,6 +6,7 @@ const config = require("./config/db.config");
 const { mongoose } = require("./models/index");
 const adminRoutes = require("./routes/admin.routes");
 const adminLoginRoutes = require("./routes/admin.login.routes");
+const productRoutes = require("./routes/product.routes");
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use(adminRoutes);
 app.use(adminLoginRoutes);
+app.use(productRoutes)
 
 mongoose.set("strictQuery", false);
 
