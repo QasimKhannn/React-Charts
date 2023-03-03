@@ -11,6 +11,6 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .concat(adminApi.middleware)
-      .concat(adminApi.middleware),
+      .concat(productApi.middleware),
   devTools: true,
 });
