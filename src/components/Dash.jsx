@@ -33,7 +33,9 @@ const Dash = () => {
               <ul style={{ listStyle: "none" }}>
                 <li>{dat._id}</li>
                 <li>{dat.title}</li>
-                <li>{dat.image}</li>
+                <li>
+                  <img src={dat.image} alt="loading" />
+                </li>
                 <li>{dat.price}</li>
                 <li>{dat.discount}</li>
                 <li>{dat.proCode}</li>
