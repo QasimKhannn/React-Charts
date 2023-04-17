@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const Admin = require("./admin.model");
 const Product = require("./product.model");
+const Image = require("./images.model");
 const db = {};
 db.mongoose = mongoose;
 db.admin = Admin;
 db.product = Product;
+db.image=Image
 module.exports = db;

@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Input } from "reactstrap";
 import { useAddProductMutation } from "../features/productSlice";
 
+
 const AddProd = () => {
+  const [image, setImage] = useState(null);
   const [addProduct] = useAddProductMutation();
   const navigate = useNavigate();
+  const handleFileChange = (event) => {
+    setImage(event.target.files[0]);
+  };
   const handleLogin = (e) => {
     e.preventDefault();
     const {
@@ -47,7 +52,13 @@ const AddProd = () => {
         onSubmit={handleLogin}
       >
         <Input type="text" name="title" id="title" placeholder="title" />
-        <Input type="file" name="image" id="image" placeholder="image" />
+        <Input
+          type="file"
+          name="image"
+          id="image"
+          placeholder="image"
+          onChange={handleFileChange}
+        />
         <Input type="number" name="price" id="price" placeholder="price" />
         <Input
           type="number"
